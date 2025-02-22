@@ -22,7 +22,7 @@ project:
     - "LFSR.v"
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
-  pintout:
+  pinout:
   # inputs:               
     - "compare bit 11"
     - "compare bit 12"

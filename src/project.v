@@ -46,7 +46,7 @@ module tt_um_jun1okamura_test0 #( parameter MAX_COUNT = 16'd10_000 ) (
 	assign compare = sel0 == 0 ? MAX_COUNT : {3'b001,lfsr[7:0],5'b00000}; 
     assign data    = sel1 == 0 ? {1'b0, digit} : {1'b1, digit};
 
-    always @(posedge clk　or posedge reset) begin
+    always @(posedge clk or posedge reset) begin
         if (reset) begin        // if reset, set counter to 0
             clk2d   <= 1'b0;
 		end else begin			// LOOP

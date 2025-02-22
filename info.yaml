@@ -3,7 +3,7 @@ project:
   title:        "7-segment with LFSR" # Project title
   author:       "Jun-ichi OKAMURA"    # Your name
   discord:      "jun1okamura"         # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "TEST &-segment/LFSR" # One line description of what your project does
+  description:  "TEST 7-segment/LFSR" # One line description of what your project does
   language:     "Verilog"             # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     50000000              # Clock frequency in Hz (or 0 if not applicable)
 
@@ -24,9 +24,8 @@ project:
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
 pinout:
   # inputs:               
-  # Inputs
-  ui[0]: "sel0 "
-  ui[1]: "sel1 "
+  ui[0]: "sel0"
+  ui[1]: "sel1"
   ui[2]: "compare bit 13"
   ui[3]: "compare bit 14"
   ui[4]: "compare bit 15"

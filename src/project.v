@@ -39,7 +39,6 @@ module tt_um_jun1okamura_test0 #( parameter MAX_COUNT = 16'd10_000 ) (
     wire [4:0]  data;			// data
     wire [7:0]  lfsr;			// LFSR 8
 	wire [15:0] compare; 		// 
-    wire [15:0]	clk2num; 	    // 
     wire        strb;           //
 
 	assign compare = sel0 == 0 ? MAX_COUNT : {3'b001,lfsr[7:0],5'b00000}; 
@@ -59,14 +58,14 @@ module tt_um_jun1okamura_test0 #( parameter MAX_COUNT = 16'd10_000 ) (
     always @(posedge clk) begin
         if (reset) begin        // if reset, set counter to 0
             counter <= 16'h0000;
-            digit   <= 5'b0_0000;
+            digit   <= 4'b0000;
             clk2    <= 1'b0;
 		end else begin			// LOOP
             // if up to 10M or LFSR value
             if (counter >= compare) begin
 	            clk2    <= !clk2;
                 // reset counter
-                counter <= 24'h00_0000;
+                counter <= 16'h0000;
                 // digit <= digit + 1;
                 digit   <= digit + 1'b1;
                 // only count from 0 to F
@@ -83,7 +82,7 @@ module tt_um_jun1okamura_test0 #( parameter MAX_COUNT = 16'd10_000 ) (
 	LFSR lfsr_mod(.lfsr_out(lfsr), .clk(clk), .enb(strb), .rst(reset));
 
 	// Seven segment circuit
-    DEC_7SEG segment(.hex(data), .segment(segment_out));
+    DEC_7SEG seven_seg(.hex(data), .segment(segment_out));
 
 endmodule
 

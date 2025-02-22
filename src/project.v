@@ -55,6 +55,7 @@ module tt_um_jun1okamura_test0 #( parameter MAX_COUNT = 16'd10_000 ) (
 		end
     end
 
+
     assign strb = clk2 ^ clk2d;
 
     always @(posedge clk or posedge reset) begin

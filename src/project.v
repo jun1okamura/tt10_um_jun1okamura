@@ -5,6 +5,8 @@
 
 `default_nettype none
 
+/* verilator lint_off UNUSEDSIGNAL */
+
 module tt_um_jun1okamura_test0 #( parameter MAX_COUNT = 16'd10_000 ) (
     input  wire [7:0] ui_in,    // Dedicated inputs - connected to the input switches
     output wire [7:0] uo_out,   // Dedicated outputs - connected to the 7 segment display
@@ -44,7 +46,7 @@ module tt_um_jun1okamura_test0 #( parameter MAX_COUNT = 16'd10_000 ) (
 	assign compare = sel0 == 0 ? MAX_COUNT : {3'b001,lfsr[7:0],5'b00000}; 
     assign data    = sel1 == 0 ? {1'b0, digit} : {1'b1, digit};
 
-    always @(posedge clk) begin
+    always @(posedge clk　or posedge reset) begin
         if (reset) begin        // if reset, set counter to 0
             clk2d   <= 1'b0;
 		end else begin			// LOOP
@@ -55,7 +57,7 @@ module tt_um_jun1okamura_test0 #( parameter MAX_COUNT = 16'd10_000 ) (
 
     assign strb = clk2 ^ clk2d;
 
-    always @(posedge clk) begin
+    always @(posedge clk or posedge reset) begin
         if (reset) begin        // if reset, set counter to 0
             counter <= 16'h0000;
             digit   <= 4'b0000;

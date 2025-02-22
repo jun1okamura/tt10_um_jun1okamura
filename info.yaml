@@ -24,34 +24,35 @@ project:
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
 pinout:
   # inputs:               
-    - "compare bit 11"
-    - "compare bit 12"
-    - "compare bit 13"
-    - "compare bit 14"
-    - "compare bit 15"
-    - "compare bit 16"
-    - "compare bit 17"
-    - "compare bit 18"
-# A description of what the outputs do (e.g. status LED, SPI MISO, etc)
-  # outputs:
-    - "segment a"
-    - "segment b"
-    - "segment c"
-    - "segment d"
-    - "segment e"
-    - "segment f"
-    - "segment g"
-    - "dot"
-# A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
-  # bidirectional:
-    - "second counter bit 0"
-    - "second counter bit 1"
-    - "second counter bit 2"
-    - "second counter bit 3"
-    - "second counter bit 4"
-    - "second counter bit 5"
-    - "second counter bit 6"
-    - "second counter bit 7"
+  # Inputs
+  ui[0]: "sel0 "
+  ui[1]: "sel1 "
+  ui[2]: "compare bit 13"
+  ui[3]: "compare bit 14"
+  ui[4]: "compare bit 15"
+  ui[5]: "compare bit 16"
+  ui[6]: "compare bit 17"
+  ui[7]: "compare bit 18"
+
+  # Outputs
+  uo[0]: "segment a"
+  uo[1]: "segment b"
+  uo[2]: "segment c"
+  uo[3]: "segment d"
+  uo[4]: "segment e"
+  uo[5]: "segment f"
+  uo[6]: "segment g"
+  uo[7]: "dot"
+
+  # Bidirectional pins
+  uio[0]: "counter bit 0"
+  uio[1]: "counter bit 1"
+  uio[2]: "counter bit 2"
+  uio[3]: "counter bit 3"
+  uio[4]: "counter bit 4"
+  uio[5]: "counter bit 5"
+  uio[6]: "counter bit 6"
+  uio[7]: "counter bit 7"
 
 # Do not change!
 yaml_version: 6
